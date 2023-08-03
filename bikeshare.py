@@ -13,19 +13,18 @@ def check_data(question, available_data):
     Returns:
         string - input data enter by the users
     """
-    valid = False
-
-    while valid == False:
-        data_input = input(question)
-        data_input = data_input.title()
-
-        if data_input not in available_data:
-            print("It's seems that something was wrong with the data that you give me! Try one more time. Thanks! ")
-            continue
-        else:
-            valid = True
-
-    return data_input
+    try:
+        user_input = str(input(question)).title()
+        while user_input not in available_data :
+            print('It looks like your entry is incorrect.')
+            print('Let\'s try again!')
+            user_input = str(input(question)).title()
+        
+        print('Great! You\'ve chosen: {}\n'.format(user_input))
+        return user_input
+    
+    except:
+        print('There seems to be an issue with your input.')
 
 def get_filters():
     """
