@@ -13,19 +13,18 @@ def check_data(question, available_data):
     Returns:
         string - input data enter by the users
     """
-    valid = False
-
-    while valid == False:
-        data_input = input(question)
-        data_input = data_input.title()
-
-        if data_input not in available_data:
-            print("It's seems that something was wrong with the data that you give me! Try one more time. Thanks! ")
-            continue
-        else:
-            valid = True
-
-    return data_input
+    try:
+        user_input = str(input(question)).title()
+        while user_input not in available_data :
+            print('It looks like your entry is incorrect.')
+            print('Let\'s try again!')
+            user_input = str(input(question)).title()
+        
+        print('Great! You\'ve chosen: {}\n'.format(user_input))
+        return user_input
+    
+    except:
+        print('There seems to be an issue with your input.')
 
 def get_filters():
     """
@@ -195,7 +194,7 @@ def user_stats(df):
 
 def display_data(df, n_rows):
     """ Ask to the user to see more lines of data of the dataframe (df) and returns (display) the next bunch of data (n_rows)"""
-    
+
     display = True
     i=0
     len_df = len(df)
@@ -224,17 +223,14 @@ def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
-        
-        
-
+              
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
         
-        display_data(df, 5)
+        display_data(df, 100)
         
-
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
