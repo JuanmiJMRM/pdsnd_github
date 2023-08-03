@@ -194,10 +194,8 @@ def user_stats(df):
     print('-'*40)
 
 def display_data(df, n_rows):
-    """
-    Display the information of the dataframe df. The number of rows to display is specified in n_rows 
+    """ Ask to the user to see more lines of data of the dataframe (df) and returns (display) the next bunch of data (n_rows)"""
     
-    """
     display = True
     i=0
     len_df = len(df)
