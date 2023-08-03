@@ -13,9 +13,9 @@ Bikeshare project present all the data of the city and displays it in a easy way
 bikeshare.py
 readme.txt (only information, not the same that readme.md!)
 Also we ignore for the git project but we need the .csv files with the correct name:
-chicago.csv
-new_york_city.csv
-washington.csv
+    chicago.csv
+    new_york_city.csv
+    washington.csv
 
 ### Credits
 https://learn.udacity.com/nanodegrees/nd104/parts/cd0024/lessons/ls1727/concepts/a2e583a2-8a14-4324-aa2a-fc9b78d23caf
